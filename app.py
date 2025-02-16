@@ -15,7 +15,7 @@ def wrap_latex_equations(text):
 
     return re.sub(latex_pattern, wrap_match, text)  
 
-
+#new version?
 load_dotenv()
 
 # Get the API key
