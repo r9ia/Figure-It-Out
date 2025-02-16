@@ -1,0 +1,122 @@
+/* 
+Things to come back to:
+- Download nice font
+- color themes
+- add avatar description in html
+- adjust the description to create a nice paragraph in css
+- make sure website looks nice in multiple views
+- add images
+- add about
+- add popup and hover effect to about instead of just normal paragraph
+- add footer 
+- add send fnctionality with "enter"
+*/
+
+html{
+    text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    flex-direction: column; 
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh; 
+}
+
+
+.buttons-container {
+    display: flex;  
+    justify-content: center;  
+    gap: 50px;  
+    flex-wrap: wrap; 
+    padding: 20px; 
+}
+
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;  
+    text-align: center;  
+}
+
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px; 
+}
+
+.image-button {
+    width: 120px; 
+    height: 120px; 
+    background-size: cover;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px; 
+    transition: transform 0.2s; 
+}
+
+
+#avatar1 { background-image: url('default.PNG'); }
+#avatar2 { background-image: url('funny.PNG'); }
+#avatar3 { background-image: url('talkative.PNG'); }
+#avatar4 { background-image: url('tutor.PNG'); }
+
+
+.image-button:hover {
+    transform: scale(1.1); 
+}
+
+
+.button-wrapper p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.button-wrapper p:hover{
+    transform: scale(1.2); 
+    color: red;
+
+}
+
+
+.tooltip {
+    position: relative;
+    cursor: pointer;
+}
+
+
+.tooltip::after {
+    content: attr(data-tooltip); 
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    top: 150%; 
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
