@@ -4,16 +4,32 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Coolvetica'; 
+    src: url('/static/Coolvetica Rg.otf') format('opentype');
+} 
+
 .image-button:hover, #cancelExitButton:hover, #confirmExitButton:hover{
     transform: scale(1.5); 
     }
 
 header{
+    background-color: #718355;
+    color:white;
     display: flex;
     justify-content: space-between;
     flex-direction: row;  
     align-items: center; 
     padding: 10px 20px;
+}
+
+footer{
+    background-color: #718355;
+}
+
+.foot{
+    padding: 1.5em;
+    color: white;
 }
 
 .icons{
@@ -79,6 +95,8 @@ header{
     align-items: center; 
     text-align: center;
     height: 100vh;
+    background-color:#97a97c ;
+    font-family: 'Coolvetica';
 }
 
 .side{

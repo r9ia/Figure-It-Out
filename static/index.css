@@ -22,10 +22,36 @@ html{
     text-align: center;
 }
 
+footer{
+    background-color: #718355;
+}
+
+.foot{
+    padding: 1.5em;
+    color: white;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+header{
+    background-color: #718355;
+    color:white;
+    font-size: 2em;
+    box-shadow: 0 2px 40px rgb(6, 13, 8);
+}
+
+.side{
+    display:flex;
+    flex-direction:row;
+}
+
+.welcome{
+    max-width: 60%;
+    max-height: 60%;
 }
 
 
@@ -35,16 +61,34 @@ body {
     justify-content: flex-start;
     height: 100vh; 
     font-family: 'Coolvetica';
+    background-color: #97a97c;
+    padding: 0;
 }
 
-h1{
+p{
     margin: 1em;
+    margin-left: 30px;
+    font-size: 1.5em;
+}
+
+.about{
+    margin-left: 30px;
+    text-align: left; 
+}
+
+
+h1{
+    margin: .8em;
+    margin-top: 0;
+    margin-bottom: 0;
     font-size: 4em;
 }
 
 h2{
-    margin: 2em;
-    font-size: 2em;
+    margin: 0.5em;
+    margin-left: 30px;
+    font-size: 5em;
+    text-align: left; 
 }
 
 
@@ -73,21 +117,23 @@ button {
 }
 
 .image-button {
-    width: 120px; 
-    height: 120px; 
-    background-size: cover;
+    width: 200px; 
+    height: 235px; 
+    background-size:cover;
     background-position: center;
+    background-color: transparent;
     border: none;
     cursor: pointer;
     border-radius: 10px; 
     transition: transform 0.2s; 
+    
 }
 
 
-#avatar1 { background-image: url('default.PNG'); }
-#avatar2 { background-image: url('funny.PNG'); }
-#avatar3 { background-image: url('talkative.PNG'); }
-#avatar4 { background-image: url('tutor.PNG'); }
+#avatar1 { background-image: url('images/default.png');}
+#avatar2 { background-image: url('images/funny.png'); }
+#avatar3 { background-image: url('images/gossip.png'); }
+#avatar4 { background-image: url('images/eli5.PNG'); }
 
 
 .image-button:hover {

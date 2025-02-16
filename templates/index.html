@@ -6,57 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="{{ url_for('static', filename='index.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
-    <title> FIO </title>
+    <title> Figure It Out! </title>
 </head>
-
 <body>
     <header>
-        <img id="WelcomeLogo" src="logo.PNG" alt="Main Welcome FIO Logo">
-        <h1>Figure It Out!</h1>
+        <div class="side">
+            <div>
+                <img id="WelcomeLogo" class ="welcome" src="{{ url_for('static', filename='images/logo.png') }}" alt="Main Welcome FIO Logo">
+            </div>
+            <div>  
+                <h1>Figure it Out!</h1> 
+            </div>
+        </div>
+        <hr id="line1">
     </header>
 
-    <hr id="line1">
+    <br>
+    <br>
+    <br>
+    <br>
 
     <div class="buttons-container">
         <div class="button-wrapper" id="1">
-            <button id="avatar1" class="image-button"></button>
-            <p class="tooltip" data-tooltip="description"> Default </p>
+            <button id="avatar1" class="image-button">
+            </button>
+            <p class="tooltip" data-tooltip="Friendly and Straightforward"> Default </p>
         </div>
 
         <div class="button-wrapper" id="2">
             <button id="avatar2" class="image-button"></button>
-            <p class="tooltip" data-tooltip="description"> Funny </p>
+            <p class="tooltip" data-tooltip="Sarcastic and Creative"> Funny </p>
         </div>
 
         <div class="button-wrapper" id="3">
             <button id="avatar3" class="image-button"></button>
-            <p class="tooltip" data-tooltip="description"> Talkative </p>
+            <p class="tooltip" data-tooltip="Whimsical and Comfortable"> Talkative </p>
         </div>
-
+        
         <div class="button-wrapper" id="4">
             <button id="avatar4" class="image-button"></button>
-            <p class="tooltip" data-tooltip="description"> Explain like I'm 5 </p>
+            <p class="tooltip" data-tooltip="Mature and Understanding"> Explain like I'm 5 </p>
         </div>
     </div>
 
+    <h1>Get Started with 1 click.</h1>
 
-    <hr id="line2">
+    <br>
+    <br>
+
+
+    <hr id="line1">
+
+    <h2>What is FIO?</h2>
 
     <div id="about">
-        <h2>What is FIO?</h2>
-
+        <p class="about">Figure It Out (FIO) is a website that supports adolescents (ages 10-19) and their academic needs. When prompted with a 
+            technical question, FIO hints towards the problem solving process rather than giving the answer outright, unlike other LLMs. 
+            This promotes the 
+            development of soft skills such as problem solving and troubleshooting during this period of crucial brain development. 
+            FIO also helps students retain their course material better. <br>
+            Our multiple chatbots with different teaching/personality styles, like Explain Like I’m 5 or Talkative Friend, support 
+            all student’s learning styles and enhance the benefits of the learning process for the user.  <br>
+            Hover over the name to learn more about our chatbots' personality ^_^ </p>
     </div>
 
-    <hr id="line3">
-
-    <div id="about">
-        <h2>Why we Made It </h2>
-    </div>
-
-    <hr id="line3">
+    <br>
 
     <footer>
-
+        <p class="foot">
+            ElleHacks 2025. Aadya Jindal, Sumaya Osman, Farah Baliki, Georgia Wu  
+        </p>
     </footer>
     
 </body>
