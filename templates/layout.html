@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >Chatbot</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #chatbox { width: 80%; margin: auto; border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: auto; }
+        input, button { margin-top: 10px; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Chatbot</h2>
+    <div id="chatbox">
+        <p><strong>Chatbot:</strong> Hello! How can I help?</p>
+    </div>
+    <input type="text" id="userInput" placeholder="Type a message...">
+    <button id="sendBtn">Send</button>
+
+    <script>
+        // Generate a user_id for this session if it doesn't exist
+        if (!sessionStorage.getItem("user_id")) {
+            sessionStorage.setItem("user_id", "user_" + Math.random().toString(36).substr(2, 9));
+        }
+        const user_id = sessionStorage.getItem("user_id");
+
+        window.addEventListener("DOMContentLoaded", () => {
+        fetch(`/get_conversation?user_id=${user_id}`)
+            .then(response => response.json())
+            .then(data => {
+            const chatbox = document.getElementById("chatbox");
+            if (data.length > 0) {
+                chatbox.innerHTML = 'Restored Conversation';
+            } 
+            data.forEach(item => {
+                if (item.role === 'USER') {
+                chatbox.innerHTML += `<p><strong>User:</strong> ${item.message}</p>`; //revive chat based on session_history of that user's id
+                } else if (item.role === 'CHATBOT') {
+                chatbox.innerHTML += `<p><strong>Bot:</strong> ${item.message}</p>`;
+                }
+            });
+            })
+            .catch(error => console.error("Error:", error));
+        });
+        
+
+        document.getElementById("sendBtn").addEventListener("click", function() {
+            const userMessage = document.getElementById("userInput").value;
+            if (!userMessage) return;
+
+            fetch("/chatbot/default", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userMessage, user_id: user_id })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const chatbox = document.getElementById("chatbox");
+                chatbox.innerHTML += `<p><strong>User:</strong> ${userMessage}</p>`;
+                chatbox.innerHTML += `<p><strong>Bot:</strong> ${data.reply}</p>`;
+                document.getElementById("userInput").value = "";
+                chatbox.scrollTop = chatbox.scrollHeight;
+            })
+            .catch(error => console.error("Error:", error));
+        });
+    </script>
+</body>
+</html>
+
