@@ -12,6 +12,12 @@ Things to come back to:
 - add send fnctionality with "enter"
 */
 
+/* declaring the custom font */
+@font-face {
+    font-family: 'Coolvetica'; 
+    src: url('/static/Coolvetica Rg.otf') format('opentype');
+} 
+
 html{
     text-align: center;
 }
@@ -28,6 +34,17 @@ body {
     align-items: center;
     justify-content: flex-start;
     height: 100vh; 
+    font-family: 'Coolvetica';
+}
+
+h1{
+    margin: 1em;
+    font-size: 4em;
+}
+
+h2{
+    margin: 2em;
+    font-size: 2em;
 }
 
 
