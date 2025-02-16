@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='eli5.css') }}">
-    <title>FIO - ELI5</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='funny.css') }}">
+    <title>FIO - Funny</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; }
         #chatbox { width: 80%; margin: auto; border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: auto; }
@@ -61,7 +61,7 @@
             <div id="avatar">  </div>
 
             <div id="description">
-                <p> bla bla bla bla <br> bla bla bla <br> bla bla bla <br> </p>
+                <p> Funny is pretty restless. <br> Conversation will be engaging and lively. </p>
             </div>
 
         </div>
@@ -109,7 +109,7 @@
                     const userMessage = document.getElementById("userInput").value;
                     if (!userMessage) return;
                     
-                    fetch("/chatbot/default", {
+                    fetch("/chatbot/eli5", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({ message: userMessage, user_id: user_id })

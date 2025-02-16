@@ -4,13 +4,48 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Coolvetica'; 
+    src: url('/static/Coolvetica Rg.otf') format('opentype');
+} 
+
 header{
     display: flex;
     justify-content: space-between;
     flex-direction: row;  
     align-items: center; 
     padding: 10px 20px;
+    background-color: #708055;
 }
+
+body{
+    background-color: #b5c99a;
+}
+
+footer{
+    background-color: #708055;
+    padding: 2px;
+}
+
+.image-button {
+    width: 100px; 
+    height: 100px; 
+    background-size:cover;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px; 
+    transition: transform 0.2s; 
+}
+
+
+#home { background-image: url('images/home button.png');}
+#restart { background-image: url('images/refresh_restart button.png'); }
+#switch { background-image: url('images/switch characters buttob.png'); }
+#sendBtn{ background-image: url('images/send.png'); }
+
+
 
     .icons{
         display: flex;
@@ -81,10 +116,11 @@ header{
     align-items: center; 
     text-align: center;
     height: 100vh;
+    
 }
 
     .side{
-        width: 30%;
+        width: 40%;
         height: 100%;
         display: flex; 
         justify-content: flex-start;
@@ -94,28 +130,44 @@ header{
 
         #avatar{
             border: solid grey 2px;
-            border-radius: 100%;
-            width: 30%;
             padding: 10%;
-            background-image: url('default.PNG');
+            background-image: url('images/default.png');
             margin: 10%;
+            width: 300px; 
+            height: 350px; 
+            background-size:cover;
+            background-position: center;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px; 
+            transition: transform 0.2s; 
         }
 
         #description{
             border: solid grey 2px;
             margin-top: 10px;
-            padding: 20%;
+            font-size: 1.5em;
+            width: 100%;
+            padding: 10px;
+            background-color: #a2b483;
+            border-radius: 8px;
         }
 
 
     .box{
-        width: 70%;
-        height: 30%;
+        width: 75%;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         margin-left: 10%;
         align-items: center;
+        padding: 10px;
+        top: 1em;
+    }
+
+    #chatbox{
+        background-color: aliceblue;
     }
 
         .chat{
@@ -124,8 +176,10 @@ header{
             display: flex;
             flex-direction: column;
             justify-content: flex-end;  
-            border: solid 2px grey; 
+            border: solid 2px rgb(136, 131, 131); 
         }
+
+        
 
 
         #conversation{

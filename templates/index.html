@@ -11,8 +11,18 @@
 
 <body>
     <header>
-        <img id="WelcomeLogo" src="logo.PNG" alt="Main Welcome FIO Logo">
-        <h1>Figure It Out!</h1>
+        <div class="welcome1">
+            <div class="lotus_logo" style="display: inline-block">
+                <img id="WelcomeLogo" src="{{ url_for('static', filename='images/logo.png') }}" alt="Main Welcome FIO Logo">
+
+            </div>
+            <div class="title" style="display: inline-block">
+                <h1>Figure It Out!</h1>
+
+            </div>
+        </div>
+        
+        
     </header>
 
     <hr id="line1">
@@ -44,7 +54,9 @@
 
     <div id="about">
         <h2>What is FIO?</h2>
-
+        <p>Figure It Out (FIO) is a website that supports adolescents (ages 10-19) and their academic needs. When prompted with a technical question, FIO hints towards the problem solving process rather than giving the answer outright, unlike other LLMs. This promotes the development of soft skills such as problem solving and troubleshooting during this period of crucial brain development. FIO also helps students retain their course material better.
+            Our multiple chatbots with different teaching/personality styles, like Explain Like I’m 5 or Talkative Friend, support all student’s learning styles and enhance the benefits of the learning process for the user.
+            Hover over the name to learn more about our chatbots' personality ^_^</p>
     </div>
 
     <hr id="line3">

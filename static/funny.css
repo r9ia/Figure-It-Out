@@ -4,9 +4,10 @@
     box-sizing: border-box;
 }
 
-.image-button:hover, #cancelExitButton:hover, #confirmExitButton:hover{
-    transform: scale(1.5); 
-    }
+@font-face {
+    font-family: 'Coolvetica'; 
+    src: url('/static/Coolvetica Rg.otf') format('opentype');
+} 
 
 header{
     display: flex;
@@ -14,62 +15,100 @@ header{
     flex-direction: row;  
     align-items: center; 
     padding: 10px 20px;
+    background-color: #708055;
 }
 
-.icons{
-    display: flex;
-    flex-direction: row; 
-    padding: 20px;
+body{
+    background-color: #b5c99a;
 }
 
-#corner{
-    display: flex;
-    flex-direction: row;
-    align-items: center; 
-    justify-content: flex-end; 
+footer{
+    background-color: #708055;
+    padding: 2px;
 }
 
-#restart, #switch {
-    margin-left: 10px; 
-}
-
-.modal {
-    display: none;  
-    position: fixed;
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); 
-}
-
-.modal-content {
-    background-color: white;
-    margin: 15% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 25%; 
-}
-
-#cancelExitButton, #confirmExitButton{
-    margin: 10%;
-}
-
-.close {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    right: 25px;
-}
-
-.close:hover, .close:focus {
-    color: black;
-    text-decoration: none;
+.image-button {
+    width: 100px; 
+    height: 100px; 
+    background-size:cover;
+    background-position: center;
+    background-color: transparent;
+    border: none;
     cursor: pointer;
+    border-radius: 10px; 
+    transition: transform 0.2s; 
 }
+
+
+#home { background-image: url('images/home button.png');}
+#restart { background-image: url('images/refresh_restart button.png'); }
+#switch { background-image: url('images/switch characters buttob.png'); }
+#sendBtn{ background-image: url('images/send.png'); }
+
+
+
+
+
+    .icons{
+        display: flex;
+        flex-direction: row; 
+        padding: 20px;
+    }
+
+    .image-button:hover, #cancelExitButton:hover, #confirmExitButton:hover{
+        transform: scale(1.5); 
+    }
+
+    #corner{
+        display: flex;
+        flex-direction: row;
+        align-items: center; 
+        justify-content: flex-end; 
+    }
+
+        #restart, #switch {
+            margin-left: 20px; 
+        }
+
+            #restartModal, #switchModal {
+                display: none;  
+                position: fixed;
+                z-index: 1; 
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.4); 
+            }
+
+            .modal-content {
+                background-color: white;
+                margin: 15% auto; 
+                padding: 20px;
+                border: 1px solid #888;
+                width: 25%; 
+            }
+
+            #cancelExitButton, #confirmExitButton{
+                margin: 10%;
+            }
+
+            .close {
+                color: #aaa;
+                font-size: 28px;
+                font-weight: bold;
+                position: absolute;
+                top: 10px;
+                right: 25px;
+            }
+
+            .close:hover, .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+
 
 .body{
     margin: 0 auto;
@@ -79,71 +118,88 @@ header{
     align-items: center; 
     text-align: center;
     height: 100vh;
+    
 }
 
-.side{
-    width: 30%;
-    height: 100%;
-    display: flex; 
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: center;
-}
+    .side{
+        width: 40%;
+        height: 100%;
+        display: flex; 
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.box{
-    width: 70%;
-    height: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin-left: 10%;
-    align-items: center;
-}
+        #avatar{
+            border: solid grey 2px;
+            padding: 10%;
+            background-image: url('images/funny.png');
+            margin: 10%;
+            width: 300px; 
+            height: 350px; 
+            background-size:cover;
+            background-position: center;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px; 
+            transition: transform 0.2s; 
+        }
 
-.chat{
-    width: 70%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;  
-    border: solid 2px grey; 
-}
-
-
-
-#avatar{
-    border: solid grey 2px;
-    border-radius: 100%;
-    width: 30%;
-    padding: 10%;
-    background-image: url('funny.PNG');
-    margin: 10%;
-}
-
-#description{
-    border: solid grey 2px;
-    margin-top: 10px;
-    padding: 20%;
-}
-
-#conversation{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 10%;
-}
+        #description{
+            border: solid grey 2px;
+            margin-top: 10px;
+            font-size: 1.5em;
+            width: 100%;
+            padding: 10px;
+            background-color: #a2b483;
+            border-radius: 8px;
+        }
 
 
-#send{
-    background-image: url('send.png');
-    display: flex;
-    flex-direction: row;
-    align-items: center; 
-    justify-content: flex-end;
-    height: 30px;
-    width: 30px;
-}
+    .box{
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-left: 10%;
+        align-items: center;
+        padding: 10px;
+        top: 1em;
+    }
 
-#send:hover{
-    transform: scale(1.1); 
-}
+    #chatbox{
+        background-color: aliceblue;
+    }
+
+        .chat{
+            width: 70%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;  
+            border: solid 2px rgb(136, 131, 131); 
+        }
+
+        
+
+
+        #conversation{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 10%;
+        }
+
+
+        #sendBtn{
+            background-image: url('send.png');
+            display: flex;
+            flex-direction: row;
+            align-items: center; 
+            justify-content: flex-end;
+        }
+
+        #send:hover{
+            transform: scale(1.1); 
+        }

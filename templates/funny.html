@@ -61,7 +61,7 @@
             <div id="avatar">  </div>
 
             <div id="description">
-                <p> bla bla bla bla <br> bla bla bla <br> bla bla bla <br> </p>
+                <p> Funny is pretty restless. <br> Conversation will be engaging and lively. </p>
             </div>
 
         </div>
@@ -109,7 +109,7 @@
                     const userMessage = document.getElementById("userInput").value;
                     if (!userMessage) return;
                     
-                    fetch("/chatbot/default", {
+                    fetch("/chatbot/funny", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({ message: userMessage, user_id: user_id })
